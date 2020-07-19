@@ -43,7 +43,6 @@ class User
 
     def self.inside
         container=[]
-        pls=[]
         Project.all.each do |projects|
             container<<projects.pledges
         end

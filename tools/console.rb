@@ -15,8 +15,10 @@ cal=User.new("cal")
 mac=User.new("mac")
 
 #users creating projects
+#title, goal, initial pledge
 mac.new_project("dungeons",4500,1000)
 cal.new_project("dragons4",4500,0)
+stan.new_project("bball",9000,)
 # james.add_pledge("dungeons",202)
 # james.new_project("crack",10000000)
 ben.new_project("kyle",100000,5000)
@@ -35,6 +37,7 @@ b="b"
 c="c"
 x= ben.add_pledge("dungeons", 1000)
 y= james.add_pledge("kyle",200)
+z= stan.add_pledge("kyle",100000)
 # x= ben.add("dragons", 1000)
 # james.new_project("kyle",100000)
 # p james.check("kyle")
