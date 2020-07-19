@@ -15,11 +15,11 @@ cal=User.new("cal")
 mac=User.new("mac")
 
 #users creating projects
-mac.new_project("dungeons",1000,4500)
-# cal.new_project("dragons4",5000,4500)
+mac.new_project("dungeons",4500,1000)
+cal.new_project("dragons4",4500,0)
 # james.add_pledge("dungeons",202)
 # james.new_project("crack",10000000)
-ben.new_project("kyle",5000,100000)
+ben.new_project("kyle",100000,5000)
 
 #test area******************************
 # dungeons=Project.new("dungeons", 2000, james,100000)
