@@ -1,3 +1,4 @@
+
 class Project
 #must have pledge goal amount
 #no_pledges, above_goal, most backers
@@ -20,10 +21,10 @@ class Project
         @@all
     end
 
-    def add_pledge (pledge,user)
-        next_pledge=Pledge.new(self.title, pledge, user)
-        @pledges<<next_pledge
-    end
+    # def add_pledge (pledge,user)
+    #     next_pledge=Pledge.new(self.title, pledge, user)
+    #     @pledges<<next_pledge
+    # end
 
     # def pledges
         
