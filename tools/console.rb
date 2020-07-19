@@ -1,7 +1,7 @@
 require_relative '../config/environment.rb'
-require_relative '../app/project.rb'
-require_relative '../app/user.rb'
-require_relative '../app/pledge.rb'
+# require_relative '../app/project.rb'
+# require_relative '../app/user.rb'
+# require_relative '../app/pledge.rb'
 
 def reload
   load 'config/environment.rb'

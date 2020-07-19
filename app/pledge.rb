@@ -21,6 +21,14 @@ class Pledge
         @@all_pledges
     end
 
+    def project
+        @project
+    end
+
+    def user
+        @user.name
+    end
+
     def save
         @@all_pledges<<self
     end

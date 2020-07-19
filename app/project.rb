@@ -7,7 +7,7 @@ class Project
     @@all=[]
 
     def initialize (title, pledge, user, goal)
-        puts "#{user} has created the #{title} project. He has pledge #{pledge}!"
+        puts "#{user.name} has created the #{title} project. He has pledge #{pledge}!"
         first_pledge=Pledge.new(title,pledge,user)
         @pledges=[first_pledge]
         @title=title
@@ -41,24 +41,29 @@ class Project
         x=self.pledges.collect{|pledge|pledge.project}
         freq=x.inject(Hash.new(0)){|h,v| h[v]+=1; h} #stole this from the internet 
         #the above will count all the possible users in array
-        x.max_by{|v|freq[v]}
+        name=x.max_by{|v|freq[v]}
+        y=self.inside.select {|pledge|pledge.amount>0&&pledge.project==name}
+        z=y.collect{|pledge|pledge.user.name}
+        z=z.uniq.count
+        puts "#{name} has #{y.count} pledges and #{z} backers"
+        y
     end
 
     def self.above_goal
         above_goal=[]
+        sum=0
         Project.all.each do|project|
             goal= project.goal
-            puts"the goal is #{goal}!"
-            sum=0
+            # puts"the goal is #{goal}!"
             project.pledges.each do |x|
-                puts "this #{x.amount} amount is being added"
+                # puts "this #{x.amount} amount is being added"
                 sum= sum+ x.amount
             end
-            puts "the sum #{sum} vs #{goal}!"
-            puts project.title
-            above_goal<<project.title if sum>goal
+            # puts "the sum #{sum} vs #{goal}!"
+            # puts project.title
+            above_goal<<project if sum>goal
         end
-        above_goal
+        puts "#{above_goal[0].title} has gathered $#{sum} which is more than the pledge goal of #{above_goal[0].goal}"
     end
 
     # def add_pledge (pledge,user)

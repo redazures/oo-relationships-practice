@@ -25,6 +25,7 @@ class User
     def add_pledge(title,pledge)
         tests=Pledge.new(title, pledge, self)
         Project.all.select{|project| project.title==title}[0].pledges<<tests
+        tests
     end
 
     def new_project (title,goal,pledge=0)
